@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="well">
+    <%= link_to "New Product", new_blog_path, remote: true, class: "btn btn-primary" %>
+  </div>
+  <div class="new-blog"></div>
+  <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Body</th>
+          <th>Created At</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody class="blog-index">
+        <%= render 'index' %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="blog-modal">
+
+</div><!-- /.modal -->
+</div>

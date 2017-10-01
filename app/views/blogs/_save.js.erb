@@ -1,0 +1,9 @@
+$("ul .errors").html("")
+<% if @blog.errors.any? %>
+  <% @blog.errors.full_messages.each do |message| %>
+    $("ul .errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $(".blog-index").html("<%= j render 'index' %>")
+  $("#blog-modal").modal("hide")
+<% end %>
