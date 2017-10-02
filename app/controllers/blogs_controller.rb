@@ -27,8 +27,17 @@ class BlogsController < ApplicationController
     @blog.update_attributes(blog_params)
   end
 
-  def delete
+  def status
     @blog = Blog.find(params[:blog_id])
+    if @blog.is_active == true
+      @blog.is_active = false
+      @blog.save
+      @blogs = Blog.all
+    else
+    @blog.is_active = true
+    @blog.save
+    @blogs = Blog.all
+    end
   end
 
   def destroy
